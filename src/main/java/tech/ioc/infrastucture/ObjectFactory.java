@@ -22,6 +22,7 @@ public class ObjectFactory {
 
     @SneakyThrows
     ObjectFactory(ApplicationContext context, JavaApplicationConfig config) {
+
         this.context = context;
         for (var configurator : config.getScanner().getSubTypesOf(ObjectConfigurator.class)) {
             simpleObjectConfigurators.add(
